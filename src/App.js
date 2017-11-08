@@ -1,5 +1,6 @@
 import React from 'react'
 import * as BooksAPI from './utils/BooksAPI'
+import Book from './Book'
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -38,18 +39,7 @@ class BooksApp extends React.Component {
                   {this.state.books.filter( (book) =>
                     book.shelf === 'currentlyReading').map((book) =>
                     <li key={book.id} className="book">
-                      <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url('${book.imageLinks.thumbnail}')` }}></div>
-                        <div className="book-shelf-changer">
-                          <select>
-                            <option value="none" disabled>Move to...</option>
-                            <option value="currentlyReading">Currently Reading</option>
-                            <option value="wantToRead">Want to Read</option>
-                            <option value="read">Read</option>
-                            <option value="none">None</option>
-                          </select>
-                        </div>
-                      </div>
+                      <Book book={book}/>
                     </li>
                     )}
                 </ol>
@@ -62,18 +52,7 @@ class BooksApp extends React.Component {
                   {this.state.books.filter( (book) =>
                     book.shelf === 'wantToRead').map((book) =>
                     <li key={book.id} className="book">
-                      <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url('${book.imageLinks.thumbnail}')` }}></div>
-                        <div className="book-shelf-changer">
-                          <select>
-                            <option value="none" disabled>Move to...</option>
-                            <option value="currentlyReading">Currently Reading</option>
-                            <option value="wantToRead">Want to Read</option>
-                            <option value="read">Read</option>
-                            <option value="none">None</option>
-                          </select>
-                        </div>
-                      </div>
+                      <Book book={book}/>
                     </li>
                     )}
                 </ol>
@@ -86,18 +65,7 @@ class BooksApp extends React.Component {
                   {this.state.books.filter( (book) =>
                     book.shelf === 'read').map((book) =>
                     <li key={book.id} className="book">
-                      <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url('${book.imageLinks.thumbnail}')` }}></div>
-                        <div className="book-shelf-changer">
-                          <select>
-                            <option value="none" disabled>Move to...</option>
-                            <option value="currentlyReading">Currently Reading</option>
-                            <option value="wantToRead">Want to Read</option>
-                            <option value="read">Read</option>
-                            <option value="none">None</option>
-                          </select>
-                        </div>
-                      </div>
+                      <Book book={book}/>
                     </li>
                     )}
                 </ol>
