@@ -15,10 +15,10 @@ function BookShelf(props) {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {props
-            .state.filter((book) => book.shelf === item.bookshelfName)
+            .books.filter((book) => book.shelf === item.bookshelfName)
             .map((book) => {
               return <li key={book.id}>
-                <Book book={book}/>
+                <Book book={book} onShelfChange={props.onShelfChange}/>
               </li>
             })
           }
